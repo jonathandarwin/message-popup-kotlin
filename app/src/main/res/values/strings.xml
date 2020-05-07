@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">message-popup-kotlin</string>
+
+    <!-- Button Text -->
+    <string name="text_show_toast">Show Toast</string>
+    <string name="text_show_text">Show Text</string>
+    <string name="text_show_snackbar">Show Snackbar</string>
+    <string name="text_show_dialog">Show Dialog</string>
+    <string name="text_show_custom_dialog">Show Custom Dialog</string>
+    <string name="text_show_bottom_sheet_dialog">Show Bottom Sheet Dialog</string>
+    <string name="text_ok">OK</string>
+
+    <!-- Message -->
+    <string name="message_login_invalid">Incorrect username/password</string>
+    <string name="title_message_login_invalid">Login Failed</string>
+</resources>
