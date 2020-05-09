@@ -4,7 +4,6 @@ import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -72,9 +71,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             // Bottom Sheet Dialog
             btn_bottom_sheet_dialog.id -> {
                 val dialog = BottomSheetDialog(this)
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-                dialog.setContentView(R.layout.bottom_sheet_dialog_login)
+                dialog.setContentView(R.layout.dialog_login)
                 dialog.show()
+
+                dialog.btn_ok.setOnClickListener{
+                    dialog.dismiss()
+                }
             }
         }
     }
