@@ -1,5 +1,6 @@
 package com.jonathandarwin.message_popup_kotlin
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,9 +10,9 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_login.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_custom_dialog.setOnClickListener(this)
         btn_bottom_sheet_dialog.setOnClickListener(this)
     }
+
 
     override fun onClick(v: View?) {
         when(v?.id){
@@ -58,7 +60,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             // Custom Dialog
             btn_custom_dialog.id -> {
-                LoginDialog(this).show()
+                val dialog = Dialog(this)
+                dialog.setContentView(R.layout.dialog_login)
+                dialog.show()
+
+                dialog.btn_ok.setOnClickListener{
+                    dialog.dismiss()
+                }
             }
 
             // Bottom Sheet Dialog
